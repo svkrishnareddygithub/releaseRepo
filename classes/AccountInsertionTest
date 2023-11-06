@@ -19,4 +19,4 @@ public class AccountInsertionTest {
         System.assertEquals('123-456-7890', insertedAccount.Phone);
         System.assertEquals('Technology', insertedAccount.Industry);
     }
-}
+} 

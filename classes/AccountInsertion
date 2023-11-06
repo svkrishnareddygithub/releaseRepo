@@ -6,5 +6,5 @@ public class AccountInsertion {
         acc.Industry = 'Technology';
 
         insert acc;
-    }
+    } 
 }

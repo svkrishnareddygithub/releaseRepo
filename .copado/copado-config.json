@@ -1,9 +1,9 @@
 {
     "work": {
-        "copadouserstoryid": "a1vHp00000AVoOjIAL",
-        "copadouserstoryname": "US-0000007",
+        "copadouserstoryid": "a1vHp00000AVornIAD",
+        "copadouserstoryname": "US-0000008",
         "copadobasebranch": "main",
         "copadoenvbranch": "dev1",
-        "copadolastcommit": "c1c7f6cc9f3cfb96047a7d801b12df23c58de912"
+        "copadolastcommit": null
     }
 }

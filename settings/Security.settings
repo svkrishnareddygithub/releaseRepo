@@ -43,7 +43,7 @@
         <historyRestriction>3</historyRestriction>
         <lockoutInterval>FifteenMinutes</lockoutInterval>
         <maxLoginAttempts>TenAttempts</maxLoginAttempts>
-        <minimumPasswordLength>8</minimumPasswordLength>
+        <minimumPasswordLength>6</minimumPasswordLength>
         <minimumPasswordLifetime>false</minimumPasswordLifetime>
         <obscureSecretAnswer>false</obscureSecretAnswer>
         <questionRestriction>DoesNotContainPassword</questionRestriction>

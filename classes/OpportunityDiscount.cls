@@ -4,8 +4,7 @@
 public without sharing class OpportunityDiscount {
     /**
      * @description method as insertOrUpdationRecord
-     * @return void
-     * @param as list of opportunity
+     * @param opps
      */
     public static void insertOrUpdationRecord(List<Opportunity> opps){
         List<Discount_Rules__mdt> custommetadata =[SELECT id,Product_Validity__c,

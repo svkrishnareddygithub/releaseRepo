@@ -14,14 +14,10 @@ public class ProductDiscountTest {
             Name = 'Test Opportunity',
             StageName = 'Prospecting',
             CloseDate = Date.today(),
-            Product_Category__c = 'Cloths',
-            Discount__c=testDiscountRule.Discount_Percentage__c
+            Product_Category__c = 'Cloths'
             
         );
         insert testOpp;
-
-        
-        
 
         // Call the method from the main class
         OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
@@ -44,8 +40,7 @@ public class ProductDiscountTest {
             Name = 'Test Opportunity',
             StageName = 'Prospecting',
             CloseDate = Date.today(),
-            Product_Category__c = 'Cloths',
-            Discount__c=testDiscountSetting.Discount__c
+            Product_Category__c = 'Cloths'
         );
         insert testOpp;
 

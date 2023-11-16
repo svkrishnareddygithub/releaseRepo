@@ -7,9 +7,7 @@ public without sharing class OpportunityDiscount {
      * @param opps
      */
     public static void insertOrUpdationRecord(List<Opportunity> opps){
-        List<Discount_Rules__mdt> custommetadata =[SELECT id,Product_Validity__c,
-                                                    Discount_Percentage__c,Product_Category__c FROM 
-                                                   Discount_Rules__mdt where Product_Validity__c >=TODAY AND Product_Category__c!=null];
+        List<Discount_Rules__mdt> custommetadata =Opportunity_Metadata_Query.queryRecords();
         //custom setting instance
         Discount_Rule__c instance = Discount_Rule__c.getInstance(Userinfo.getProfileId());
         for(Opportunity o: opps){         

@@ -13,13 +13,16 @@ public without sharing class OpportunityDiscount {
         for(Opportunity o: opps){         
       		for(Discount_Rules__mdt md: custommetadata)
             {
-                    if(o.Product_Category__c == md.Product_Category__c && instance.Discount__c!=null){
+                if(o.Product_Category__c == md.Product_Category__c){
+                        
+                    if(instance.Discount__c!=null){
                         o.Discount__c=instance.Discount__c;
                     }
-                    else if(o.Product_Category__c == md.Product_Category__c && md.Product_Category__c!=null){
-                        o.Discount__c=md.Discount_Percentage__c;
+                    else if(md.Product_Category__c!=null){
+                    	o.Discount__c=md.Discount_Percentage__c;
                     }
+        		}
         	}
-        }
     }
+   }
 }

@@ -2,6 +2,8 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>OpportunityDiscount</members>
+        <members>Opportunity_Metadata_Query</members>
+        <members>Opportunity_Metadata_QueryTest</members>
         <members>ProductDiscountTest</members>
         <name>ApexClass</name>
     </types>

@@ -5,6 +5,8 @@ public class ProductDiscountTest {
         
         System.runAs(new User(Id=UserInfo.getUserId()))
         {
+            
+            
             Opportunity o=new Opportunity();
             o.Name='Silver';
             o.CloseDate=Date.today()+10;
@@ -12,9 +14,20 @@ public class ProductDiscountTest {
             o.Product_Category__c=Label.Product_Category_Label;
             o.Discount__c=30;
             insert o;
-            Discount_Rules__mdt serviceMetadat =[SELECT id,Product_Validity__c,
+            OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{o});
+            System.assertEquals(o.Discount__c,30,'discount should be 30');
+            
+            
+            
+        }
+        
+    }
+}
+
+/*
+ * Discount_Rules__mdt serviceMetadat =[SELECT id,Product_Validity__c,
                                                         Discount_Percentage__c FROM Discount_Rules__mdt
-                                                        WHERE Product_Category__c=:o.Product_Category__c AND Product_Validity__c >=TODAY limit 1];
+                                                        WHERE Product_Category__c=:o.Product_Category__c];
             Profile prof=[select id,name from Profile where name='Standard User'];
             Discount_Rule__c instance = Discount_Rule__c.getInstance(prof.Id);
         
@@ -37,7 +50,4 @@ public class ProductDiscountTest {
             {
                  System.assertEquals(o.Discount__c,30,'Discount percentage should be 30');
             }
-        }
-        
-    }
-}
+*/

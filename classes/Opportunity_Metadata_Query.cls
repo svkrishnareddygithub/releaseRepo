@@ -1,9 +1,10 @@
 /**
  * @description pass this list to OpportunityDiscount class method
  */
-public class Opportunity_Metadata_Query {
+public without sharing class Opportunity_Metadata_Query {
     /**
      * @description method as queryRecords
+     * @return List<Discount_Rules__mdt>
      */
     public static List<Discount_Rules__mdt> queryRecords(){
 		List<Discount_Rules__mdt> custommetadata =[SELECT id,Product_Validity__c,

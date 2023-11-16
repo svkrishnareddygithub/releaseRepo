@@ -2,23 +2,8 @@
 public class ProductDiscountTest {
 	@isTest
     public static void testCallMe() {
-        Profile p = [SELECT Id FROM Profile WHERE Name='Standard User'];
-        User testUser = new User(
-            ProfileId = p.Id,
-            LastName = 'krishna',
-            FirstName = 'sv',
-            Email = 'krishna@gmail.com',
-            Username = 'krishna@gmail.com' + System.currentTimeMillis(),
-            Alias = 'krish',
-            CommunityNickname = 'venky',
-            EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US',
-            LocaleSidKey = 'en_US',
-            TimeZoneSidKey = 'America/New_York'
-        );
-        insert testUser;
         
-        System.runAs(testUser)
+        System.runAs(new User(Id=UserInfo.getUserId()))
         {
             Opportunity o=new Opportunity();
             o.Name='Silver';

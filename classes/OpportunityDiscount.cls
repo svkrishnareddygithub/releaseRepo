@@ -7,8 +7,9 @@ public without sharing class OpportunityDiscount {
      * @param opps
      */
     public static void insertOrUpdationRecord(List<Opportunity> opps){
+        //fetching custom metadata records
         List<Discount_Rules__mdt> custommetadata =Opportunity_Metadata_Query.queryRecords();
-        //custom setting instance
+        //custom setting instance passing the profileId and getting the discount value
         Discount_Rule__c instance = Discount_Rule__c.getInstance(Userinfo.getProfileId());
         for(Opportunity o: opps){         
       		for(Discount_Rules__mdt md: custommetadata)
@@ -23,6 +24,6 @@ public without sharing class OpportunityDiscount {
                     }
         		}
         	}
-    }
+    	}
    }
 }

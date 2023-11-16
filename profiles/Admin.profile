@@ -154,6 +154,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Opportunity_Metadata_Query</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Opportunity_Metadata_QueryTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ProductDiscountTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>

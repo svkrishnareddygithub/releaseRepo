@@ -4,6 +4,7 @@
 public without sharing class OpportunityDiscount {
     /**
      * @description method as insertOrUpdationRecord
+     * @return void
      * @param as list of opportunity
      */
     public static void insertOrUpdationRecord(List<Opportunity> opps){

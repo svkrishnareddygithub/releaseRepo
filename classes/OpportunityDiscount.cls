@@ -10,7 +10,7 @@ public without sharing class OpportunityDiscount {
         List<Discount_Rules__mdt> custommetadata =[SELECT id,Product_Validity__c,
                                                     Discount_Percentage__c,Product_Category__c FROM 
                                                    Discount_Rules__mdt where Product_Validity__c >=TODAY AND Product_Category__c!=null];
-        
+        //custom setting instance
         Discount_Rule__c instance = Discount_Rule__c.getInstance(Userinfo.getProfileId());
         for(Opportunity o: opps){         
       		for(Discount_Rules__mdt md: custommetadata)

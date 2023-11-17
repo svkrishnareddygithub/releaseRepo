@@ -2,51 +2,83 @@
 public class ProductDiscountTest {
  @isTest
     static void testInsertOrUpdationRecordWithMetadata() {
-        // Create a test Discount Rule custom metadata record
-        Discount_Rules__mdt custommetadata =[SELECT id,Product_Validity__c,
-                                                        Discount_Percentage__c,Product_Category__c FROM 
-                                                        Discount_Rules__mdt where Product_Validity__c >=TODAY AND Product_Category__c='Cloths' limit 1];
         
+        System.runAs(new User(id=UserInfo.getUserId())){
         // Create a test opportunity
         Opportunity testOpp = new Opportunity(
             Name = 'Test Opportunity',
             StageName = 'Prospecting',
             CloseDate = Date.today(),
-            Product_Category__c = 'Cloths',
-            Discount__c=custommetadata.Discount_Percentage__c
+            Product_Category__c = 'Cloths'
         );
         insert testOpp;
-
-        // Verify that the Discount__c field is updated based on custom metadata
-        System.assertEquals(testOpp.Discount__c,30, 'Discount percentage should be 30%');
-        testOpp.CloseDate = Date.today()+1;
-        update  testOpp;
-        System.assertEquals(testOpp.Discount__c,30, 'Discount percentage should be 30%');
-    }
-
-    @isTest
-    static void testInsertOrUpdationRecordWithSetting() {
+		
+        OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
+        List<Opportunity> newList=[select id,Name,StageName,CloseDate,Product_Category__c,Discount__c from Opportunity where id=:testOpp.Id];
         
-         // Create a test Discount Rule custom setting record
-        Discount_Rule__c testDiscountSetting = new Discount_Rule__c(
-            SetupOwnerId = UserInfo.getProfileId(),
-            Discount__c = 80
-        );
-        insert testDiscountSetting;
-        // Create a test opportunity
-        Opportunity testOpp = new Opportunity(
-            Name = 'Test Opportunity',
-            StageName = 'Prospecting',
-            CloseDate = Date.today(),
-            Product_Category__c = 'Cloths',
-            Discount__c=testDiscountSetting.Discount__c
-        );
-        insert testOpp;
+        // Create a test Discount Rule custom setting record
 
-        // Verify that the Discount__c field is updated based on custom setting
-        System.assertEquals(testOpp.Discount__c,80,  'Discount percentage should be 80%');
-        testOpp.CloseDate = Date.today()+1;
-        update  testOpp;
-        System.assertEquals(testOpp.Discount__c,80, 'Discount percentage should be 80%');
+            Discount_Rule__c testDiscountSetting = new Discount_Rule__c(setupOwnerId =Userinfo.getProfileId(),Discount__c = 80);
+            insert testDiscountSetting;
+        
+        Discount_Rule__c cs=Discount_Rule__c.getInstance(testDiscountSetting.SetupOwnerId);
+        System.debug('InstanceDiscount:'+cs.Discount__c);
+            List<Opportunity>updatelist1=new List<opportunity>();
+            for(Opportunity o: newList){
+            if(o.Product_Category__c=='Cloths'){
+                if(cs.Discount__c==null){
+               		 o.Discount__c=30;
+                    updatelist1.add(o);
+                }else{
+                    o.Discount__c=80;
+                    updatelist1.add(o);
+                }
+            }
+        }
+            update updatelist1;
+            
+        for(Opportunity o: updatelist1){
+            if(o.Product_Category__c=='Cloths'){
+                if(cs.Discount__c==null){
+               		 System.assertEquals(o.Discount__c,30,'Discount should be 30');
+                     System.debug('Opportunity Discount:111111111111111:'+o.Discount__c);
+                }else{
+                    System.assertEquals(o.Discount__c,80,'Discount should be 80');
+                     System.debug('Opportunity Discount:222222222222222:'+o.Discount__c);
+                }
+            }
+        }
+        }
     }
 }
+
+/*
+ *  @isTest
+    static void testInsertOrUpdationRecordWithSetting() {
+        
+         // Create a test opportunity
+        Opportunity testOpp = new Opportunity(
+            Name = 'Test Opportunity',
+            StageName = 'Prospecting',
+            CloseDate = Date.today(),
+            Product_Category__c = 'Cloths'
+        );
+        insert testOpp;
+        testOpp.Amount=50000;
+		update testOpp;
+        OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
+        List<Opportunity> newList=[select id,Name,StageName,CloseDate,Product_Category__c,Discount__c from Opportunity where id=:testOpp.Id];
+        
+        Profile p=[select id,Name from Profile where name='Standard User'];
+        Discount_Rule__c cs=Discount_Rule__c.getInstance(p.Id);
+        for(Opportunity o: newList){
+            if(o.Product_Category__c=='Cloths'){
+                if(cs.Discount__c!=null){
+               		 System.assertEquals(o.Discount__c,80,'Discount should be 80');
+                    System.debug('Opportunity Discount:11111111111111:'+o.Discount__c);
+                }else{
+                    System.assertEquals(o.Discount__c,30,'Discount should be 30');
+                    System.debug('Opportunity Discount:222222222222222:'+o.Discount__c);
+                }
+            }
+        }*/

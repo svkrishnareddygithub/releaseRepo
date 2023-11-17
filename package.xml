@@ -5,6 +5,8 @@
         <members>Opportunity_Metadata_Query</members>
         <members>Opportunity_Metadata_QueryTest</members>
         <members>ProductDiscountTest</members>
+        <members>UtilityClass</members>
+        <members>UtilityClassTest</members>
         <name>ApexClass</name>
     </types>
     <types>

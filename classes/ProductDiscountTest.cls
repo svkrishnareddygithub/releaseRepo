@@ -5,11 +5,7 @@ public class ProductDiscountTest {
         System.runAs(new User(id=UserInfo.getUserId()))
         {            
             
-                 Discount_Rules__mdt testDiscountRule = new Discount_Rules__mdt(
-                    MasterLabel = 'Test Rule',
-                    Product_Category__c = 'Cloths',
-                    Discount_Percentage__c = 30.0
-                );
+                 Test.createStub(Discount_Rules__mdt.class, new UtilityClass());
            
                 Opportunity testOpp = new Opportunity(
                     Name = 'Test Opportunity',
@@ -24,7 +20,7 @@ public class ProductDiscountTest {
        			Test.stopTest();
             	
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
-				testOpp.Discount__c=testDiscountRule.Discount_Percentage__c;
+				testOpp.Discount__c=30;
             	update testOpp;
                 System.assertEquals(testOpp.Discount__c,30,'Discount should be 30');
             	System.debug('xyz'+testOpp.Discount__c);
@@ -33,6 +29,8 @@ public class ProductDiscountTest {
     
      @isTest
     static void testInsert1() {
+        
+        Test.createStub(Discount_Rules__mdt.class, new UtilityClass());
         Profile p=[select id,name from Profile where name='Standard User'];
          User testUser = new User(
             ProfileId = p.Id,
@@ -65,13 +63,14 @@ public class ProductDiscountTest {
                     Product_Category__c = 'Cloths'
                 );
                 insert testOpp;
-        		testOpp.Discount__c=testDiscountSetting.Discount__c;
-            	update testOpp;
+        		
             
                 Test.startTest();
                 OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
        			Test.stopTest();
             
+           		testOpp.Discount__c=testDiscountSetting.Discount__c;
+            	update testOpp;
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
 
                 System.assertEquals(retriverec.Discount__c,20,'Discount should be 20');

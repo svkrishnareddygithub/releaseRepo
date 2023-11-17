@@ -4,7 +4,6 @@ public class ProductDiscountTest {
     static void testInsert() {
         System.runAs(new User(id=UserInfo.getUserId()))
         {            
-            
                 // Create a test opportunity
                 Opportunity testOpp = new Opportunity(
                     Name = 'Test Opportunity',
@@ -17,7 +16,7 @@ public class ProductDiscountTest {
                 Test.startTest();
                 OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
        			Test.stopTest();
-            
+            	
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
 				testOpp.Discount__c=30;
             	update testOpp;

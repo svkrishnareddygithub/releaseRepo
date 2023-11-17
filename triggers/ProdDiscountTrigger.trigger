@@ -1,3 +1,3 @@
-trigger ProdDiscountTrigger on Opportunity (before insert, before update) {
+trigger ProdDiscountTrigger on Opportunity ( before update) {
         OpportunityDiscount.insertOrUpdationRecord(trigger.new);
 }

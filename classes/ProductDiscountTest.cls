@@ -23,6 +23,7 @@ public class ProductDiscountTest {
         
         Discount_Rule__c cs=Discount_Rule__c.getInstance(testDiscountSetting.SetupOwnerId);
         System.debug('InstanceDiscount:'+cs.Discount__c);
+            
             List<Opportunity>updatelist1=new List<opportunity>();
             for(Opportunity o: newList){
             if(o.Product_Category__c=='Cloths'){
@@ -47,6 +48,51 @@ public class ProductDiscountTest {
                      System.debug('Opportunity Discount:222222222222222:'+o.Discount__c);
                 }
             }
+        }
+        }
+    }
+    
+    
+    
+    @isTest
+    static void testInsert() {
+        
+        System.runAs(new User(id=UserInfo.getUserId())){
+        // Create a test opportunity
+        Opportunity testOpp = new Opportunity(
+            Name = 'Test Opportunity',
+            StageName = 'Prospecting',
+            CloseDate = Date.today(),
+            Product_Category__c = 'Cloths',
+            Discount__c=30
+        );
+        insert testOpp;
+            
+            Opportunity testOpp1 = new Opportunity(
+            Name = 'Test Opportunity',
+            StageName = 'Prospecting',
+            CloseDate = Date.today(),
+            Product_Category__c = 'Cloths',
+            Discount__c=80
+        );
+        insert testOpp1;
+		
+        OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
+        
+        // Create a test Discount Rule custom setting record
+
+        Discount_Rule__c testDiscountSetting = new Discount_Rule__c(setupOwnerId =Userinfo.getProfileId(),Discount__c = 80);
+        insert testDiscountSetting;
+        
+        Discount_Rule__c cs=Discount_Rule__c.getInstance(testDiscountSetting.SetupOwnerId);
+        System.debug('InstanceDiscount:'+cs.Discount__c);
+            
+        if(cs.Discount__c==null){
+             System.assertEquals(testOpp.Discount__c,30,'Discount should be 30');
+             System.debug('Opportunity Discount:111111111111111:'+testOpp.Discount__c);
+        }else{
+            System.assertEquals(testOpp1.Discount__c,80,'Discount should be 80');
+             System.debug('Opportunity Discount:222222222222222:'+testOpp1.Discount__c);
         }
         }
     }

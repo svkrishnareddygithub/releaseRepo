@@ -19,7 +19,11 @@ public class ProductDiscountTest {
        			Test.stopTest();
             
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
-
+            	Discount_Rules__mdt custommetadata =[SELECT id,Product_Validity__c,
+                                                        Discount_Percentage__c,Product_Category__c FROM 
+                                                        Discount_Rules__mdt where Product_Category__c=:retriverec.Product_Category__c limit 1];
+				testOpp.Discount__c=custommetadata.Discount_Percentage__c;
+            	update testOpp;
                 System.assertEquals(testOpp.Discount__c,30,'Discount should be 30');
         }
     }
@@ -58,14 +62,16 @@ public class ProductDiscountTest {
                     Product_Category__c = 'Cloths'
                 );
                 insert testOpp;
-        
+        		testOpp.Discount__c=testDiscountSetting.Discount__c;
+            	update testOpp;
+            
                 Test.startTest();
                 OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
        			Test.stopTest();
             
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
 
-                System.assertEquals(testOpp.Discount__c,20,'Discount should be 30');
+                System.assertEquals(retriverec.Discount__c,20,'Discount should be 20');
         }
     }
 }

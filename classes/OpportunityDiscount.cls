@@ -11,17 +11,17 @@ public without sharing class OpportunityDiscount {
         List<Discount_Rules__mdt> custommetadata =Opportunity_Metadata_Query.queryRecords();
         //custom setting instance passing the profileId and getting the discount value
         Discount_Rule__c instance = Discount_Rule__c.getInstance(Userinfo.getProfileId());
-        system.debug(instance.SetupOwnerId);
         for(Opportunity o: opps){         
       		for(Discount_Rules__mdt md: custommetadata)
             {
                 if(o.Product_Category__c == md.Product_Category__c){
                         
-                    if(instance.Discount__c!=null){
-                        o.Discount__c=instance.Discount__c;
+                    if(instance.Discount__c==null){
+                        
+                        o.Discount__c=md.Discount_Percentage__c;
                     }
-                    else if(md.Product_Category__c!=null){
-                    	o.Discount__c=md.Discount_Percentage__c;
+                    else{
+                    	o.Discount__c=instance.Discount__c;
                     }
         		}
         	}

@@ -10,11 +10,7 @@ public class ProductDiscountTest {
                     Product_Category__c = 'Cloths',
                     Discount_Percentage__c = 30.0
                 );
-            
-            Discount_Rules__mdt custommetadata =[SELECT id,Product_Validity__c,
-                                                        Discount_Percentage__c,Product_Category__c FROM 
-                                                        Discount_Rules__mdt where Product_Category__c=:testDiscountRule.Product_Category__c limit 1];
-                // Create a test opportunity
+           
                 Opportunity testOpp = new Opportunity(
                     Name = 'Test Opportunity',
                     StageName = 'Prospecting',
@@ -28,7 +24,7 @@ public class ProductDiscountTest {
        			Test.stopTest();
             	
                 Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
-				testOpp.Discount__c=custommetadata.Discount_Percentage__c;
+				testOpp.Discount__c=testDiscountRule.Discount_Percentage__c;
             	update testOpp;
                 System.assertEquals(testOpp.Discount__c,30,'Discount should be 30');
             	System.debug('xyz'+testOpp.Discount__c);

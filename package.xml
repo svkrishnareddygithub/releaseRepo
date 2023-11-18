@@ -25,13 +25,6 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>Discount_Rules.Big_Sale</members>
-        <members>Discount_Rules.Diwali_sale</members>
-        <members>Discount_Rules.Holyday_Discount</members>
-        <members>Discount_Rules.Monthly_Discount</members>
-        <name>CustomMetadata</name>
-    </types>
-    <types>
         <members>Discount_Rule_Setting__c</members>
         <members>Discount_Rules__mdt</members>
         <name>CustomObject</name>

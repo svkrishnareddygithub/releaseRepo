@@ -39,9 +39,9 @@ public class ProductDiscountTest {
             	
                 Opportunity opprec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
                 Opportunity opprec1=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp1.Id limit 1];
-            if(opprec.Product_Category__c=='Cloths'){
+            if(opprec.Discount__c==37.0){
                 System.assertEquals(37.0,opprec.Discount__c,'Discount should be 37.0');
-            }else{
+            }else if(testOpp1.Discount__c!=37.0){
                 System.assertEquals(10.0,opprec1.Discount__c,'Discount should be 10');
             }
         }

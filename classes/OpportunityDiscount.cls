@@ -37,9 +37,9 @@ public without sharing class OpportunityDiscount {
         
         for(Opportunity o:categoryRecords)
         {
-            if(o.Discount__c==30.0 && instance!=null && instance.discount__c!=null){
+            if(o.Discount__c>30.0 && instance!=null && instance.discount__c!=null){
                 o.Discount__c+=instance.Discount__c;
-            }else{
+            }else if(o.Discount__c<30.0){
                 o.Discount__c=o.Discount__c;
             }
         }

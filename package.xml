@@ -5,8 +5,6 @@
         <members>Opportunity_Metadata_Query</members>
         <members>Opportunity_Metadata_QueryTest</members>
         <members>ProductDiscountTest</members>
-        <members>UtilityClass</members>
-        <members>UtilityClassTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -14,7 +12,7 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>Discount_Rule__c.Discount__c</members>
+        <members>Discount_Rule_Setting__c.Discount__c</members>
         <members>Discount_Rules__mdt.Discount_Percentage__c</members>
         <members>Discount_Rules__mdt.Product_Category__c</members>
         <members>Discount_Rules__mdt.Product_Validity__c</members>
@@ -27,7 +25,7 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>Discount_Rule__c</members>
+        <members>Discount_Rule_Setting__c</members>
         <members>Discount_Rules__mdt</members>
         <name>CustomObject</name>
     </types>

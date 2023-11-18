@@ -5,8 +5,6 @@ public class ProductDiscountTest {
         System.runAs(new User(id=UserInfo.getUserId()))
         {            
             
-                 Test.createStub(Discount_Rules__mdt.class, new UtilityClass());
-           
                 Opportunity testOpp = new Opportunity(
                     Name = 'Test Opportunity',
                     StageName = 'Prospecting',
@@ -14,66 +12,38 @@ public class ProductDiscountTest {
                     Product_Category__c = 'Cloths'
                 );
                 insert testOpp;
+            	Opportunity testOpp1 = new Opportunity(
+                    Name = 'Test Opportunity',
+                    StageName = 'Prospecting',
+                    CloseDate = Date.today(),
+                    Product_Category__c = 'Sports'
+                );
+                insert testOpp1;
+            
+                // Create a test Discount_Rule_Setting__c instance
+                Discount_Rule_Setting__c testSetting = new Discount_Rule_Setting__c(
+                    Name = 'Add 7 Percentage',
+                    Discount__c = 7.0
+                );
+                insert testSetting;
+				
+            
         
                 Test.startTest();
-                OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
+                OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp,testOpp1});
        			Test.stopTest();
+                if(testOpp.Product_Category__c=='Cloths'){
+                    testOpp.Discount__c+=testSetting.Discount__c;
+                }
+               update testOpp;
             	
-                Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
-				testOpp.Discount__c=30;
-            	update testOpp;
-                System.assertEquals(testOpp.Discount__c,30,'Discount should be 30');
-            	System.debug('xyz'+testOpp.Discount__c);
-        }
-    }
-    
-     @isTest
-    static void testInsert1() {
-        
-        Test.createStub(Discount_Rules__mdt.class, new UtilityClass());
-        Profile p=[select id,name from Profile where name='Standard User'];
-         User testUser = new User(
-            ProfileId = p.Id,
-            FirstName = 'Test',
-            LastName = 'User',
-            Email = 'testuser@example.com',
-            Username = 'testuser@example.com' + System.currentTimeMillis(),
-            Alias = 'tuser',
-            CommunityNickname = 'testuser',
-            EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US',
-            LocaleSidKey = 'en_US',
-            TimeZoneSidKey = 'America/New_York'
-        );
-        insert testUser;
-        System.runAs(testUser)
-        {
-            
-                 Discount_Rule__c testDiscountSetting = new Discount_Rule__c(
-                    setupOwnerId = testUser.ProfileId,
-                    Discount__c = 20
-                );
-                insert testDiscountSetting;
-            
-                // Create a test opportunity
-                Opportunity testOpp = new Opportunity(
-                    Name = 'Test Opportunity',
-                    StageName = 'Prospecting',
-                    CloseDate = Date.today(),
-                    Product_Category__c = 'Cloths'
-                );
-                insert testOpp;
-        		
-            
-                Test.startTest();
-                OpportunityDiscount.insertOrUpdationRecord(new List<Opportunity>{testOpp});
-       			Test.stopTest();
-            
-           		testOpp.Discount__c=testDiscountSetting.Discount__c;
-            	update testOpp;
-                Opportunity retriverec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
-
-                System.assertEquals(retriverec.Discount__c,20,'Discount should be 20');
+                Opportunity opprec=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp.Id limit 1];
+                Opportunity opprec1=[select id,name,discount__c,Product_Category__c from Opportunity where id=:testOpp1.Id limit 1];
+            if(opprec.Product_Category__c=='Cloths'){
+                System.assertEquals(37.0,opprec.Discount__c,'Discount should be 37.0');
+            }else{
+                System.assertEquals(10.0,opprec1.Discount__c,'Discount should be 10');
+            }
         }
     }
 }

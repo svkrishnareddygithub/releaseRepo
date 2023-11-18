@@ -1,43 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>OpportunityDiscount</members>
-        <members>Opportunity_Metadata_Query</members>
-        <members>Opportunity_Metadata_QueryTest</members>
-        <members>ProductDiscountTest</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>ProdDiscountTrigger</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>Discount_Rule_Setting__c.Discount__c</members>
-        <members>Discount_Rules__mdt.Discount_Percentage__c</members>
-        <members>Discount_Rules__mdt.Product_Category__c</members>
-        <members>Discount_Rules__mdt.Product_Validity__c</members>
         <members>Opportunity.Discount__c</members>
         <members>Opportunity.Product_Category__c</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>Product_Category_Label</members>
-        <name>CustomLabel</name>
-    </types>
-    <types>
-        <members>Discount_Rules.Big_Sale</members>
-        <members>Discount_Rules.Diwali_sale</members>
-        <members>Discount_Rules.Holyday_Discount</members>
-        <members>Discount_Rules.Monthly_Discount</members>
-        <name>CustomMetadata</name>
-    </types>
-    <types>
-        <members>Discount_Rule_Setting__c</members>
-        <members>Discount_Rules__mdt</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Discount_Rules__mdt-Discount Rules Layout</members>
         <members>Opportunity-Formato de oportunidades</members>
         <name>Layout</name>
     </types>

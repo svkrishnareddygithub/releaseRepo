@@ -10,7 +10,7 @@ public class ProductDiscountTest {
                     StageName = 'Prospecting',
                     CloseDate = Date.today(),
                     Product_Category__c =Label.Product_Category_Label ,
-                    Discount__c=5
+                    Discount__c=6
                 );
                 insert testOpp;
               

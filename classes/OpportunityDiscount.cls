@@ -1,48 +1,57 @@
 /**
- * @description display the discount based on the category using custom metadata type and custom settings
+ * @description Display the discount based on the category using custom metadata type and custom settings
  */
-  // This has a Cyclomatic Complexity = 10
 public without sharing class OpportunityDiscount {
+    
     /**
-     * @description method as insertOrUpdationRecord
-     * @param opps
+     * @description Method to insert or update records
+     * @param opps List of Opportunities
      */
-    public static void insertOrUpdationRecord(List<Opportunity> opps){ // This method has a cyclomatic complexity of 11
-        //fetching custom metadata records
-        List<Discount_Rules__mdt> custommetadata =Opportunity_Metadata_Query.queryRecords();
-        //custom setting instance passing the profileId and getting the discount value
-        List<Opportunity> categoryRecords=new List<Opportunity>();
-        for(Opportunity o: opps){
-            if(o.Product_Category__c!=null){
+    public static void insertOrUpdationRecord(List<Opportunity> opps) {
+        List<Discount_Rules__mdt> custommetadata = Opportunity_Metadata_Query.queryRecords();
+        List<Opportunity> categoryRecords = new List<Opportunity>();
+        
+        for (Opportunity o : opps) {
+            if (o.Product_Category__c != null) {
                 categoryRecords.add(o);
             }
         }
         
-        for(Opportunity o: categoryRecords)
-        {  
-            Decimal disountpercentage=0;
-            {
-                for(Discount_Rules__mdt md: custommetadata)
-                {
-                    if(o.Product_Category__c==md.Product_Category__c)
-                    {
-                        disountpercentage+=md.Discount_Percentage__c;
-                        o.Discount__c=disountpercentage;
-                    }	
-                } 
-            }
-            o.Discount__c=disountpercentage;
-    	}
+        calculateDiscounts(categoryRecords, custommetadata);
         
+        applyAdditionalDiscounts(categoryRecords);
+    }
+
+    /**
+     * Calculate discounts based on custom metadata
+     * @param categoryRecords List of Opportunities
+     * @param custommetadata List of Discount Rules
+     */
+    private static void calculateDiscounts(List<Opportunity> categoryRecords, List<Discount_Rules__mdt> custommetadata) {
+        for (Opportunity o : categoryRecords) {
+            Decimal discountPercentage = 0;
+            for (Discount_Rules__mdt md : custommetadata) {
+                if (o.Product_Category__c == md.Product_Category__c) {
+                    discountPercentage += md.Discount_Percentage__c;
+                }
+            }
+            o.Discount__c = discountPercentage;
+        }
+    }
+
+    /**
+     * Apply additional discounts based on custom settings
+     * @param categoryRecords List of Opportunities
+     */
+    private static void applyAdditionalDiscounts(List<Opportunity> categoryRecords) {
         Discount_Rule_Setting__c instance = Discount_Rule_Setting__c.getValues('Add 7 Percentage');
         
-        for(Opportunity o:categoryRecords)
-        {
-            if(o.Discount__c>30.0 && instance!=null && instance.discount__c!=null){
-                o.Discount__c+=instance.Discount__c;
-            }else if(o.Discount__c<30.0){
-                o.Discount__c=o.Discount__c;
+        for (Opportunity o : categoryRecords) {
+            if (o.Discount__c > 30.0 && instance != null && instance.discount__c != null) {
+                o.Discount__c += instance.Discount__c;
+            } else if (o.Discount__c < 30.0) {
+                // Do nothing or handle as per your business logic
             }
         }
-   }
+    }
 }

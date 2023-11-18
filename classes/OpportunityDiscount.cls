@@ -23,7 +23,7 @@ public without sharing class OpportunityDiscount {
     }
 
     /**
-     * Calculate discounts based on custom metadata
+     * @description Calculate discounts based on custom metadata
      * @param categoryRecords List of Opportunities
      * @param custommetadata List of Discount Rules
      */
@@ -40,7 +40,7 @@ public without sharing class OpportunityDiscount {
     }
 
     /**
-     * Apply additional discounts based on custom settings
+     * @description Apply additional discounts based on custom settings
      * @param categoryRecords List of Opportunities
      */
     private static void applyAdditionalDiscounts(List<Opportunity> categoryRecords) {
@@ -49,8 +49,6 @@ public without sharing class OpportunityDiscount {
         for (Opportunity o : categoryRecords) {
             if (o.Discount__c > 30.0 && instance != null && instance.discount__c != null) {
                 o.Discount__c += instance.Discount__c;
-            } else if (o.Discount__c < 30.0) {
-                // Do nothing or handle as per your business logic
             }
         }
     }

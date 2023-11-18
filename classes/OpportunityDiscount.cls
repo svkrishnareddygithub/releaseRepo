@@ -1,13 +1,13 @@
 /**
  * @description display the discount based on the category using custom metadata type and custom settings
  */
-  // This has a Cyclomatic Complexity = 12
+  // This has a Cyclomatic Complexity = 10
 public without sharing class OpportunityDiscount {
     /**
      * @description method as insertOrUpdationRecord
      * @param opps
      */
-    public static void insertOrUpdationRecord(List<Opportunity> opps){ // This method has a cyclomatic complexity of 12
+    public static void insertOrUpdationRecord(List<Opportunity> opps){ // This method has a cyclomatic complexity of 11
         //fetching custom metadata records
         List<Discount_Rules__mdt> custommetadata =Opportunity_Metadata_Query.queryRecords();
         //custom setting instance passing the profileId and getting the discount value

@@ -27,6 +27,14 @@
                 <behavior>Edit</behavior>
                 <field>CampaignId</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Category__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Discount__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -137,9 +145,6 @@
             <quickActionName>NewCase</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>NewNote</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
             <quickActionName>NewEvent</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
@@ -231,4 +236,10 @@
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
+    <summaryLayout>
+        <masterLabel>00hHp000008IZ5F</masterLabel>
+        <sizeX>4</sizeX>
+        <sizeY>0</sizeY>
+        <summaryLayoutStyle>Default</summaryLayoutStyle>
+    </summaryLayout>
 </Layout>

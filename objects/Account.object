@@ -250,6 +250,75 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>District__c</fullName>
+        <externalId>false</externalId>
+        <label>District</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>States__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hyderabad</fullName>
+                    <default>false</default>
+                    <label>Hyderabad</label>
+                </value>
+                <value>
+                    <fullName>Warangal</fullName>
+                    <default>false</default>
+                    <label>Warangal</label>
+                </value>
+                <value>
+                    <fullName>Nalgonda</fullName>
+                    <default>false</default>
+                    <label>Nalgonda</label>
+                </value>
+                <value>
+                    <fullName>Guntur</fullName>
+                    <default>false</default>
+                    <label>Guntur</label>
+                </value>
+                <value>
+                    <fullName>Krishna</fullName>
+                    <default>false</default>
+                    <label>Krishna</label>
+                </value>
+                <value>
+                    <fullName>Prakasam</fullName>
+                    <default>false</default>
+                    <label>Prakasam</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>AndhraPradesh</controllingFieldValue>
+                <valueName>Guntur</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AndhraPradesh</controllingFieldValue>
+                <valueName>Krishna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AndhraPradesh</controllingFieldValue>
+                <valueName>Prakasam</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Telangana</controllingFieldValue>
+                <valueName>Hyderabad</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Telangana</controllingFieldValue>
+                <valueName>Warangal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Telangana</controllingFieldValue>
+                <valueName>Nalgonda</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -309,6 +378,30 @@
     <fields>
         <fullName>Site</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>States__c</fullName>
+        <externalId>false</externalId>
+        <label>States</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AndhraPradesh</fullName>
+                    <default>false</default>
+                    <label>AndhraPradesh</label>
+                </value>
+                <value>
+                    <fullName>Telangana</fullName>
+                    <default>false</default>
+                    <label>Telangana</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>TickerSymbol</fullName>

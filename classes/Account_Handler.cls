@@ -3,8 +3,8 @@
  */
 public with sharing class Account_Handler {
      /**
-     * @description method as queryRecords
-     * @param List<Account> accounts list of inserted or updated records
+     * @description Method to insert or update records
+     * @param accounts list of accounts
      */
     public static void updateOrInsertRecords(List<Account> accounts){
         for(Account a:accounts){

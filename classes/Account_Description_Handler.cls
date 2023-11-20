@@ -6,7 +6,7 @@ public without sharing class Account_Description_Handler {
      * @description Method to insert or update records
      * @param accounts list of accounts
      */
-    Public static void description_update(List<Account> accounts){
+    Public static void descriptionUpdate(List<Account> accounts){
         for(Account a:accounts){
             if(a.Phone!=null){
                 a.description=a.Phone;

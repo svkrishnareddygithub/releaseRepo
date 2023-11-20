@@ -3,11 +3,20 @@
     <types>
         <members>Account_Description_Handler</members>
         <members>Account_Description_Test</members>
+        <members>Account_Handler</members>
+        <members>Account_HandlerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>AccountDescriptionTrigger</members>
-        <name>ApexTrigger</name>
+        <members>Account.Email__c</members>
+        <members>Account.TotalAccounts__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Contract_Manager</members>
+        <members>Marketing_User</members>
+        <members>Standard_User</members>
+        <name>Profile</name>
     </types>
     <version>59.0</version>
 </Package>

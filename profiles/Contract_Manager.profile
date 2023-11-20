@@ -6,7 +6,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Account_Handler</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Account_HandlerTest</apexClass>

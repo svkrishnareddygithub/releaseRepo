@@ -19,7 +19,22 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.District__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Industry</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.States__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -27,6 +42,27 @@
         <field>Account.TotalAccounts__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <layoutAssignments>
+        <layout>Account-Formato de cuentas</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Formato de cuentas</layout>
+        <recordType>Account.Biotechnology</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Formato de cuentas</layout>
+        <recordType>Account.Education_Type</recordType>
+    </layoutAssignments>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Account.Biotechnology</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Account.Education_Type</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>

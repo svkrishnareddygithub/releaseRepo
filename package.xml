@@ -8,15 +8,51 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>AccountDescriptionTrigger</members>
+        <members>AccountTrigger_States_District</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Account.Account_Phone__c</members>
+        <members>Account.CompanyEmail__c</members>
+        <members>Account.District__c</members>
         <members>Account.Email__c</members>
+        <members>Account.Industry</members>
+        <members>Account.IsChecked__c</members>
+        <members>Account.Password__c</members>
+        <members>Account.StartDate__c</members>
+        <members>Account.States__c</members>
+        <members>Account.Status__c</members>
         <members>Account.TotalAccounts__c</members>
+        <members>Account.TotalAmount__c</members>
+        <members>Account.TotalContacts__c</members>
+        <members>Account.Total_Revenue__c</members>
+        <members>Account.Type_Of_Account__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>Account-Formato de cuentas</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Field_Permission_ReadOnly</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Contract_Manager</members>
         <members>Marketing_User</members>
+        <members>Standard</members>
         <members>Standard_User</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>Account.Biotechnology</members>
+        <members>Account.Education_Type</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>Industry</members>
+        <name>StandardValueSet</name>
     </types>
     <version>59.0</version>
 </Package>

@@ -238,12 +238,29 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Account_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>BillingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CompanyEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>CompanyEmail</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -337,6 +354,14 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>IsChecked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsChecked</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -364,6 +389,16 @@
         <type>Hierarchy</type>
     </fields>
     <fields>
+        <fullName>Password__c</fullName>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>25</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>lastFour</maskType>
+        <required>false</required>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -387,6 +422,14 @@
     <fields>
         <fullName>Site</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>StartDate</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>States__c</fullName>
@@ -413,6 +456,35 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Started</fullName>
+                    <default>false</default>
+                    <label>Started</label>
+                </value>
+                <value>
+                    <fullName>InProgress</fullName>
+                    <default>false</default>
+                    <label>InProgress</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>TickerSymbol</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -431,9 +503,50 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>TotalAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>TotalAmount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalContacts__c</fullName>
+        <externalId>false</externalId>
+        <label>TotalContacts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Revenue</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Of_Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Account</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Website</fullName>
@@ -520,6 +633,21 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Education_Type</fullName>
@@ -567,6 +695,21 @@
             </values>
             <values>
                 <fullName>Telangana</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Started</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

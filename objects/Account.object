@@ -633,6 +633,21 @@
                 <default>false</default>
             </values>
         </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Education_Type</fullName>
@@ -680,6 +695,21 @@
             </values>
             <values>
                 <fullName>Telangana</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Started</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

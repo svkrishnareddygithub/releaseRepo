@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Account_Description_Handler</members>
-        <members>Account_Description_Test</members>
-        <members>Account_Handler</members>
-        <members>Account_HandlerTest</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>Account.Email__c</members>
-        <members>Account.TotalAccounts__c</members>
-        <name>CustomField</name>
+        <members>Field_Permission_ReadOnly</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Contract_Manager</members>

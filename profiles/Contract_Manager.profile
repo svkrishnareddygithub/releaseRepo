@@ -5,8 +5,12 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Account_Handler</apexClass>
+        <apexClass>Account_Description_Test</apexClass>
         <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Account_Handler</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Account_HandlerTest</apexClass>
@@ -222,10 +226,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>SubmitMacrosAllowed</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>SubscribeToLightningReports</name>
     </userPermissions>
     <userPermissions>
@@ -251,9 +251,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewTrustMeasures</name>
     </userPermissions>
 </Profile>

@@ -336,15 +336,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Email__c</fullName>
-        <externalId>false</externalId>
-        <label>Email</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -490,17 +481,6 @@
     </fields>
     <fields>
         <fullName>Tier</fullName>
-    </fields>
-    <fields>
-        <fullName>TotalAccounts__c</fullName>
-        <externalId>false</externalId>
-        <label>TotalAccounts</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>TotalAmount__c</fullName>

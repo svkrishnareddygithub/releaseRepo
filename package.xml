@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Account_Description_Handler</members>
+        <members>Account_Description_Test</members>
         <members>Account_Handler</members>
         <members>Account_HandlerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>AccountTrigger_States_District</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>Account.District__c</members>
-        <members>Account.Industry</members>
-        <members>Account.States__c</members>
+        <members>Account.Email__c</members>
+        <members>Account.TotalAccounts__c</members>
         <name>CustomField</name>
-    </types>
-    <types>
-        <members>Account-Formato de cuentas</members>
-        <name>Layout</name>
     </types>
     <types>
         <members>Contract_Manager</members>
         <members>Marketing_User</members>
-        <members>Standard</members>
+        <members>Standard_User</members>
         <name>Profile</name>
-    </types>
-    <types>
-        <members>Account.Biotechnology</members>
-        <members>Account.Education_Type</members>
-        <name>RecordType</name>
-    </types>
-    <types>
-        <members>Industry</members>
-        <name>StandardValueSet</name>
     </types>
     <version>59.0</version>
 </Package>

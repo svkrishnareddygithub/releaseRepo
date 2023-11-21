@@ -327,9 +327,28 @@
     <enableHistory>false</enableHistory>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
+        <fullName>AadharNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>AadharNumber</label>
+        <length>15</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>lastFour</maskType>
+        <required>false</required>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Alternate_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternate Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>AssistantName</fullName>
@@ -340,8 +359,58 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Assistant_s_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Assistant&apos;s Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Birthdate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Custom_Checkbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Custom Checkbox</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospect</fullName>
+                    <default>false</default>
+                    <label>Prospect</label>
+                </value>
+                <value>
+                    <fullName>Customer</fullName>
+                    <default>false</default>
+                    <label>Customer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DOB__c</fullName>
+        <externalId>false</externalId>
+        <label>DOB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Department</fullName>
@@ -352,12 +421,71 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>District__c</fullName>
+        <externalId>false</externalId>
+        <label>District</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>State__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Guntur</fullName>
+                    <default>false</default>
+                    <label>Guntur</label>
+                </value>
+                <value>
+                    <fullName>Krishna</fullName>
+                    <default>false</default>
+                    <label>Krishna</label>
+                </value>
+                <value>
+                    <fullName>Nalgonda</fullName>
+                    <default>false</default>
+                    <label>Nalgonda</label>
+                </value>
+                <value>
+                    <fullName>Adilabad</fullName>
+                    <default>false</default>
+                    <label>Adilabad</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Andhra Pradesh</controllingFieldValue>
+                <valueName>Guntur</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Andhra Pradesh</controllingFieldValue>
+                <valueName>Krishna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Telangana</controllingFieldValue>
+                <valueName>Nalgonda</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Telangana</controllingFieldValue>
+                <valueName>Adilabad</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Emergency_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Emergency Contact</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
     </fields>
     <fields>
         <fullName>Fax</fullName>
@@ -430,6 +558,35 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Preferred_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Language</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hindi</fullName>
+                    <default>false</default>
+                    <label>Hindi</label>
+                </value>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>Telugu</fullName>
+                    <default>false</default>
+                    <label>Telugu</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Pronouns</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
@@ -440,8 +597,53 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Social_Media_Handle__c</fullName>
+        <externalId>false</externalId>
+        <label>Social Media Handle</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Andhra Pradesh</fullName>
+                    <default>false</default>
+                    <label>Andhra Pradesh</label>
+                </value>
+                <value>
+                    <fullName>Telangana</fullName>
+                    <default>false</default>
+                    <label>Telangana</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>TotalContacts__c</fullName>
+        <externalId>false</externalId>
+        <label>TotalContacts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <listViews>
         <fullName>AllContacts</fullName>
@@ -488,6 +690,106 @@
         </filters>
         <label>New This Week</label>
     </listViews>
+    <recordTypes>
+        <fullName>Other_Record_Type</fullName>
+        <active>true</active>
+        <label>Other Record Type</label>
+        <picklistValues>
+            <picklist>District__c</picklist>
+            <values>
+                <fullName>Adilabad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guntur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Krishna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nalgonda</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>Andhra Pradesh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telangana</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Social_Record_Type</fullName>
+        <active>true</active>
+        <label>Social Record Type</label>
+        <picklistValues>
+            <picklist>District__c</picklist>
+            <values>
+                <fullName>Adilabad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guntur</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Krishna</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nalgonda</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>Andhra Pradesh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telangana</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>

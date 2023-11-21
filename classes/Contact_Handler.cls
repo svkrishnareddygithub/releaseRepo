@@ -9,8 +9,9 @@ public without sharing class Contact_Handler {
     public static void updateOrInsertRecords(List<Contact> contacts){
         for(Contact a:contacts){
             if(a.State__c != null){
-                if(a.District__c==null)
+                if(a.District__c==null){
                 a.District__c.addError('Select District Value');
+                }
             }
         }
     }

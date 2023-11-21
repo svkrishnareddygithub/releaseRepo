@@ -23,5 +23,4 @@ public class Contact_DescriptionWithPhoneTest {
     }
 
     }
-    
 }

@@ -2,7 +2,6 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>Contact.AadharNumber__c</members>
-        <members>Contact.Alternate_Email__c</members>
         <name>CustomField</name>
     </types>
     <version>59.0</version>

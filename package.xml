@@ -2,6 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>Contact.Alternate_Email__c</members>
+        <members>Contact.Assistant_s_Name__c</members>
         <name>CustomField</name>
     </types>
     <version>59.0</version>

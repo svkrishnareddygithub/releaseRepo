@@ -4,18 +4,7 @@
         <members>Contact.AadharNumber__c</members>
         <members>Contact.Alternate_Email__c</members>
         <members>Contact.Assistant_s_Name__c</members>
-        <members>Contact.Custom_Checkbox__c</members>
-        <members>Contact.Customer_Status__c</members>
-        <members>Contact.DOB__c</members>
-        <members>Contact.Emergency_Contact__c</members>
-        <members>Contact.Preferred_Language__c</members>
-        <members>Contact.Social_Media_Handle__c</members>
-        <members>Contact.TotalContacts__c</members>
         <name>CustomField</name>
-    </types>
-    <types>
-        <members>ReadOnlyPermission_Contact_Fields</members>
-        <name>PermissionSet</name>
     </types>
     <version>59.0</version>
 </Package>
